@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class EOConcurso extends Model {
 
   protected $table = 'eoconcursos';
-  protected $date  = ['exame_date'];
+  protected $date  = ['exam_date'];
 
   $fillable  = [
-    'ano', 'seq_ano', 'banca', 'seq_banca', 'exame_date',
+    'ano', 'seq_ano', 'banca', 'seq_banca', 'exam_date',
     'n_inscritos', 'n_aprovados', 'graudificuldade',
     'comentario_editor',
   ];

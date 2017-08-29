@@ -17,7 +17,7 @@ class CreateEOConcursosTable extends Migration {
       $table->tinyInteger('seq_ano');
       $table->string('banca', 20)->default('FGV');
       $table->tinyInteger('seq_banca');
-      $table->date('exame_date')->nullable();
+      $table->date('exam_date')->nullable();
       $table->integer('n_inscritos')->nullable();
       $table->integer('n_aprovados')->nullable();
       $table->tinyInteger('graudificuldade')->nullable();
