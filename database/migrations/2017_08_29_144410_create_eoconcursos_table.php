@@ -12,15 +12,15 @@ class CreateEOConcursosTable extends Migration {
    */
   public function up() {
     Schema::create('eoconcursos', function (Blueprint $table) {
-      $table->increments('id');
-      $table->year('ano');
-      $table->tinyInteger('seq_ano');
+      $table->smallIncrements('id');
+      $table->date('ano')->year();  // year
+      $table->tinyInteger('seq_ano')->unsigned();
       $table->string('banca', 20)->default('FGV');
-      $table->tinyInteger('seq_banca');
+      $table->tinyInteger('seq_banca')->unsigned();
       $table->date('exam_date')->nullable();
-      $table->integer('n_inscritos')->nullable();
-      $table->integer('n_aprovados')->nullable();
-      $table->tinyInteger('graudificuldade')->nullable();
+      $table->integer('n_inscritos')->unsigned()->nullable();
+      $table->integer('n_aprovados')->unsigned()->nullable();
+      $table->tinyInteger('graudificuldade')->unsigned()->nullable();
       $table->text('comentario_editor')->nullable();
       $table->nullableTimestamps();
     });

@@ -13,13 +13,13 @@ class CreateMcquestionsTable extends Migration {
   public function up() {
     Schema::create('mcquestions', function (Blueprint $table) {
       $table->increments('id');
-      $table->smallInteger('eoconcurso_id')->nullable();
+      $table->smallInteger('eoconcurso_id')->unsigned()->nullable();
       $table->foreign('eoconcurso_id')->references('id')->on('eoconcursos');
-      $table->smallInteger('level1_knowledgearea_id')->nullable();
+      $table->smallInteger('level1_knowledgearea_id')->unsigned()->nullable();
       $table->foreign('level1_knowledgearea_id')->references('id')->on('knowledgeareas');
       $table->char('uf', 2)->nullable(); // this is to archive older state based exams (RJ, SP etc); null means NATIONAL
-      $table->tinyInteger('seq_banca');
-      $table->tinyInteger('graudificuldade')->nullable();
+      $table->tinyInteger('seq_banca')->unsigned();
+      $table->tinyInteger('graudificuldade')->unsigned()->nullable();
       $table->boolean('is_assunto_conceitual')->default(true);
       $table->boolean('is_assunto_lei_seca')->default(false);
       $table->boolean('is_assunto_jurisprudencial')->default(false);

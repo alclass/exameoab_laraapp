@@ -13,9 +13,9 @@ class CreateMcanswersTable extends Migration {
   public function up() {
     Schema::create('mcanswers', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('mcquestion_id');
+      $table->integer('mcquestion_id')->unsigned();
       $table->foreign('mcquestion_id')->references('id')->on('mcquestions');
-      $table->tinyInteger('position'); // maps to LETTER (A B C D E)
+      $table->tinyInteger('position')->unsigned(); // maps to LETTER (A B C D E)
       $table->text('texto_escolha');
       $table->boolean('true_or_false_if_application')->nullable();
       $table->text('comentario_editor')->nullable();

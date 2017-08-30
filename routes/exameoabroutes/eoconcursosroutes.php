@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/hello', function () {
-    return view('welcome');
+Route::get('/questions', function () {
+    return view('exameoabtemplates.questions');
 });
